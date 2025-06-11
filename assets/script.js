@@ -62,9 +62,9 @@ function generateMemberMarkup(member) {
   //* salvo in una variabile il markUp dei membri per inserirlo nell'html e generare la card
   const memberMarkUp = `
     <div class="col">
-      <div class="card mw-100 d-flex flex-row bg-black ">
-        <img src="${img}" alt="${name}" class="card-img-left img-fluid"/>
-        <div class="card-body mw-100">
+      <div class="card d-flex flex-row bg-black ">
+        <img src="${img}" alt="${name}" class="col-4 card-img-left img-fluid"/>
+        <div class="card-body col-8 mw-100">
           <h3 class="text-white">${name}</h3>
           <div class="text-white">${role}</div>
           <div class="text-info">${email}</div>
