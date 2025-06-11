@@ -39,9 +39,9 @@ const teamMembers = [
 
 //* salvo i DOM node necessari
 const ulEl = document.getElementById("team");
-const rowEl = document.querySelector(".row");
+const rowEl = document.querySelector('.row');
 
-renderTeamMembers(teamMembers, ulEl);
+renderTeamMembers(teamMembers, rowEl);
 
 //*inizializzo la funzione renderTeamMembers
 
@@ -62,10 +62,10 @@ function generateMemberMarkup(member) {
   //* salvo in una variabile il markUp dei membri per inserirlo nell'html e generare la card
   const memberMarkUp = `
     <div class="col">
-      <div class="card">
+      <div class="card bg-black">
       <div class=" d-flex align-items-center">
         <img src="${img}" alt="${name}" class="card-img-left img-fluid"/>
-        <div class="card-body bg-black">
+        <div class="card-body">
           <h3 class="text-white">${name}</h3>
           <div class="text-white">${role}</div>
           <div class="text-info">${email}</div>
