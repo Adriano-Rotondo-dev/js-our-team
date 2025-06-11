@@ -1,0 +1,11 @@
+/* applico al body il font importato e cambio il colore dell'h1*/
+body {
+    font-family:'Comic Relief', sans-serif, cursive;
+}
+h1{
+    color:deeppink;
+    font-weight: 700;
+}
+p {
+    font-size: larger;
+}
