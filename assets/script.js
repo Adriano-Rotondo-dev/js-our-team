@@ -39,41 +39,36 @@ const teamMembers = [
 
 //* salvo i DOM node necessari
 const ulEl = document.getElementById("team");
-const rowEl = document.querySelector('.row');
-const formEl = document.querySelector('form')
-const nameEl = document.getElementById('name')
-const roleEl = document.getElementById('role')
-const emailEl = document.getElementById('email')
-const imageEl = document.getElementById('image')
+const rowEl = document.querySelector(".row");
+const formEl = document.querySelector("form");
+const nameEl = document.getElementById("name");
+const roleEl = document.getElementById("role");
+const emailEl = document.getElementById("email");
+const imageEl = document.getElementById("image");
 
+renderTeamMembers(teamMembers, rowEl);
 
-renderTeamMembers(teamMembers, rowEl);  
-
-formEl.addEventListener('submit', (e)=>{
-  e.preventDefault()
-  const name = nameEl.value
-  const role = roleEl.value
-  const email = emailEl.value
-  const image = imageEl.value
+formEl.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = nameEl.value;
+  const role = roleEl.value;
+  const email = emailEl.value;
+  const image = imageEl.value;
   const newMember = {
-    name, 
-    role, 
-    email, 
-    image
-  }
-teamMembers.push(newMember)
+    name,
+    role,
+    email,
+    image,
+  };
+  teamMembers.push(newMember);
 
-renderTeamMembers(teamMembers, rowEl);  
-
-})
-
-
+  renderTeamMembers(teamMembers, rowEl);
+});
 
 //*inizializzo la funzione renderTeamMembers
 
 function renderTeamMembers(teamMembers, nodeEl) {
-  nodeEl.innerHtml = ''
-
+  nodeEl.innerHTML = "";
   //*inizializzo il ciclo for per recuperare i singoli membri del team
   for (let i = 0; i < teamMembers.length; i++) {
     const member = teamMembers[i];
