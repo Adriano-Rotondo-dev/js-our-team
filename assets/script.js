@@ -63,11 +63,8 @@ function generateMemberMarkup(member) {
   const memberMarkUp = `
     <div class="col">
       <div class="card">
-      //*applico il display flex per allineare i contenuti delle card e ridimensionare le imamgini
       <div class=" d-flex align-items-center">
-      //*inserisco le singole immagini e rendo le immagini responsive con img-fluid, spostandole sulla sinistra con card-img-left
         <img src="${img}" alt="${name}" class="card-img-left img-fluid"/>
-        //* modifico il colore del bg delle card e il colore dei testi con le classi bootstrap
         <div class="card-body bg-black">
           <h3 class="text-white">${name}</h3>
           <div class="text-white">${role}</div>
