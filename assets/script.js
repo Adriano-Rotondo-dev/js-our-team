@@ -40,12 +40,40 @@ const teamMembers = [
 //* salvo i DOM node necessari
 const ulEl = document.getElementById("team");
 const rowEl = document.querySelector('.row');
+const formEl = document.querySelector('form')
+const nameEl = document.getElementById('name')
+const roleEl = document.getElementById('role')
+const emailEl = document.getElementById('email')
+const imageEl = document.getElementById('image')
 
-renderTeamMembers(teamMembers, rowEl);
+
+renderTeamMembers(teamMembers, rowEl);  
+
+formEl.addEventListener('submit', (e)=>{
+  e.preventDefault()
+  const name = nameEl.value
+  const role = roleEl.value
+  const email = emailEl.value
+  const image = imageEl.value
+  const newMember = {
+    name, 
+    role, 
+    email, 
+    image
+  }
+teamMembers.push(newMember)
+
+renderTeamMembers(teamMembers, rowEl);  
+
+})
+
+
 
 //*inizializzo la funzione renderTeamMembers
 
 function renderTeamMembers(teamMembers, nodeEl) {
+  nodeEl.innerHtml = ''
+
   //*inizializzo il ciclo for per recuperare i singoli membri del team
   for (let i = 0; i < teamMembers.length; i++) {
     const member = teamMembers[i];
@@ -62,9 +90,9 @@ function generateMemberMarkup(member) {
   //* salvo in una variabile il markUp dei membri per inserirlo nell'html e generare la card
   const memberMarkUp = `
     <div class="col">
-      <div class="card d-flex flex-row bg-black ">
+      <div class="card d-flex flex-row bg-black mt-4">
         <img src="${img}" alt="${name}" class="col-4 card-img-left img-fluid"/>
-        <div class="card-body col-8 mw-100">
+        <div class="card-body col-8 col-">
           <h3 class="text-white">${name}</h3>
           <div class="text-white">${role}</div>
           <div class="text-info">${email}</div>
